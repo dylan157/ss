@@ -1,0 +1,14 @@
+{
+    "tests":[
+        {
+        "id":1,
+        "name": "test1",
+        "price": "prod_KJduDUPAxrH4kw"
+        },
+        {
+        "id":2,
+        "name": "test2",
+        "priceID": "prod_KJduY1H8gWaIEQ"
+        }   
+    ]
+}

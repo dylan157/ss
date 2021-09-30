@@ -1,0 +1,375 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<meta name="robots" content="index,follow,archive">
+	<title>Day 2 and 8 test</title>
+
+	<script src="https://checkout.stripe.com/checkout.js" defer></script>
+	<script> 
+		va
+	</script>
+
+
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,500,500i,700,700i" rel="stylesheet"> 
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	
+	<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script type="text/javascript"	src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+	<script type="text/javascript"	src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+	<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"></script>
+	
+	<link href="/css/layout1.css" rel="stylesheet"> 
+	<link href="/css/layout2.css" rel="stylesheet"> 
+	<link href="/css/layout3.css" rel="stylesheet"> 
+	<script src="/scripts/regis.js"></script> 
+</head>
+	<body>
+		<div class="container">		
+				
+			<h2>Day 2 and Day 8</h2>
+			<p class="headline_lower">Registration for International Arrivals.</p>
+			
+			<form id="form-TTR" name="form-TTR" method="post" action="/tests/8dt">
+				<section>
+				<h3>Personal information</h3>
+				<!-- <label>Booking Reference / Client Code ID <br><i>Note: If you already have a Client Booking Reference or an ID Code enter it here. Otherwise, leave blank and an ID Code will be automatically generated</i></label>
+					<input type="text" name="code1" placeholder="Client ID Code" > -->
+				<input type="text" name="first1" placeholder="First Names" required value="">
+				<input type="text" name="middle1" placeholder="Middle Names">
+				<input type="text" name="last1" placeholder="Last Names" required>
+			
+				<!-- BOOTSTRAP DATETIME PICKER 12042021 -->
+				<label>Date of Birth</label>		
+				<input type="date" name="dob1" max="2008-01-01" class="date-primary rqd">
+				<div class="datepicker-container date-fallback">
+					<input type="text" class="datetimepicker-input date-format" name="dob1" id="dob1" data-target="#dob1" value="" data-date-format="YYYY-MM-DD" placeholder="YYYY-MM-DD" required>
+					<div class="input-group-append" data-target="#dob1" data-toggle="datetimepicker">
+						<div class="input-group-text">
+							<i class="fa fa-calendar"></i>
+						</div>
+					</div>
+				</div>	
+
+				<select name="ethnicity1" placeholder="Ethnicity" required><option value="" disabled selected>Ethnicity</option>
+					<optgroup label="White">
+					  <option value="UK">English, Welsh, Scottish, Northern Irish or British</option>
+					  <option value="Irish">Irish</option>
+					  <option value="IrishTraveller">Gypsy or Irish Traveller</option>
+					  <option value="OtherWhite">Any other White background</option>
+					</optgroup>
+					<optgroup label="Mixed or Multiple ethnic groups">
+					  <option value="WhiteAndBlackCaribbean">White and Black Caribbean</option>
+					  <option value="WhiteAndBlackAfrican">White and Black African</option>
+					  <option value="WhiteAsian">White and Asian</option>
+					  <option value="MixedOther">Any other Mixed or Multiple ethnic background</option>
+					</optgroup>
+					<optgroup label="Asian or Asian British">
+					  <option value="Indian">Indian</option>
+					  <option value="Pakistani">Pakistani</option>
+					  <option value="Bangladeshi">Bangladeshi</option>
+					  <option value="Chinese">Chinese</option>
+					  <option value="OtherAsian">Any other Asian background</option>
+					</optgroup>
+					<optgroup label="Black, African, Caribbean or Black British">
+					  <option value="African">African</option>
+					  <option value="Caribbean">Caribbean</option>
+					  <option value="OtherBlackAfricanCaribbean">Any other Black, African or Caribbean background</option>
+					</optgroup>
+					<optgroup label="Other ethnic group">
+					  <option value="Arab">Arab</option>
+					  <option value="Other">Any other ethnic group</option>
+					</optgroup></select>
+				<div class="form-row-CL">
+					<select name="gender1" placeholder="Select gender" required><option value="" disabled selected>Gender</option>
+						<option value="M">Male</option>
+						<option value="F">Female</option>
+					</select>
+
+				</div>
+				<h4>Contact Information</h4>
+				<input type="text" name="email1" placeholder="example@gmail.com" required>
+				<input type="text" name="phone1" placeholder="07944445555" required >
+				<input type="text" name="alt_email" placeholder="Alternative Email" >
+					<input type="checkbox" name="no_client_email" onChange="noClient(this)"><label>Tick if you <strong>do not</strong> want North London Laboratory to send emails directly to the client. <br><i>Note: Alternative Email is required which, will receive email correspondance</i></label>
+				<h4>Your Address</h4>
+				<input type="text" name="a1street1" placeholder="Street Name, Number" required>
+				<input type="text" name="a1city1" placeholder="City" required>
+				<input type="text" name="a1postcode1" placeholder="Postcode" required>
+				<input type="text" name="a1country1" placeholder="Country" required>
+				
+		<label class="checkbox-label">Tick this box if this is <strong>not</strong> the same address you will be staying at during your self-isolation period.</label>
+		<input type="checkbox" name="isIsolAddr1" id="isIsolAddr1" onClick="checkboxReveal(this,'checkbox-address-children')">
+		<div id="checkbox-address-children" style="display:none">
+			<label>Address for self-isolation:</label>
+			<input class="rqd" type="text" name="isol_street1" placeholder="Street, nbr">
+			<input class="rqd" type="text" name="isol_city1" placeholder="City">
+			<input class="rqd" type="text" name="isol_pcode1" placeholder="Postcode">
+			<input class="rqd" type="text" name="isol_country1" placeholder="Country">
+		</div>
+				
+		<h4>Passport</h4><input type="text" name="passport1" placeholder="Passport Number" required>
+				
+		<h4>Vaccination</h4>
+		<label>Have you had your vaccination:</label>
+		<div class="form-row-CL">
+
+			<select name="vac_stat1" placeholder="Vaccine status" required><option value="" disabled selected>Please select</option>
+				<option value="1">Yes</option>
+				<option value="0">no</option>
+			</select>
+			<!-- <label class="radio-label">Yes</label>
+			<input type="radio" name="vac_stat1" value="1" required><label class="radio-label" >No</label>
+			<input type="radio" name="vac_stat1" value="0"> -->
+		</div>
+		<input type="text" name="vac_type1" placeholder="Vaccination Name or Type - If Known">
+			</section>
+		<!-- <section>
+		  <h3>Are you booking for anyone else?</h3>
+			<select onChange="selectReveal(this)" name="addPerson">
+				<option value="1" selected>no</option>
+				<option value="2">1</option>
+				<option value="3">2</option>
+				<option value="4">3</option>
+			</select>
+			<br>
+			<div class="" id="registration-person2" style="display:none">
+				<h4>Person 2:</h4>
+				<label>Booking Reference / Client Code ID <br><i>Note: If you already have a Client Booking Reference or an ID Code enter it here. Otherwise, leave blank and an ID Code will be automatically generated</i></label><input type="text" name="code2" placeholder="Client ID Code" >
+				<input type="text" name="first2" class="rqd" placeholder="First Names">
+				<input type="text" name="middle2" placeholder="Middle Names">
+				<input type="text" name="last2" class="rqd" placeholder="Last Names">
+			
+			<label>Date of Birth</label>		
+			<input type="date" name="dob2" max="2008-01-01" class="date-primary rqd">
+			<div class="datepicker-container date-fallback">
+				<input type="text" class="datetimepicker-input date-format rqd" name="dob2" id="dob2" data-target="#dob2" value="" data-date-format="YYYY-MM-DD" placeholder="YYYY-MM-DD">
+				<div class="input-group-append" data-target="#dob2" data-toggle="datetimepicker">
+					<div class="input-group-text">
+						<i class="fa fa-calendar"></i>
+					</div>
+				</div>
+			</div>	
+			
+				<select name="ethnicity2" placeholder="Ethnicity" class="rqd" ><option value="" disabled selected>Ethnicity</option>
+					<optgroup label="White">
+					  <option value="UK">English, Welsh, Scottish, Northern Irish or British</option>
+					  <option value="Irish">Irish</option>
+					  <option value="IrishTraveller">Gypsy or Irish Traveller</option>
+					  <option value="OtherWhite">Any other White background</option>
+					</optgroup>
+					<optgroup label="Mixed or Multiple ethnic groups">
+					  <option value="WhiteAndBlackCaribbean">White and Black Caribbean</option>
+					  <option value="WhiteAndBlackAfrican">White and Black African</option>
+					  <option value="WhiteAsian">White and Asian</option>
+					  <option value="MixedOther">Any other Mixed or Multiple ethnic background</option>
+					</optgroup>
+					<optgroup label="Asian or Asian British">
+					  <option value="Indian">Indian</option>
+					  <option value="Pakistani">Pakistani</option>
+					  <option value="Bangladeshi">Bangladeshi</option>
+					  <option value="Chinese">Chinese</option>
+					  <option value="OtherAsian">Any other Asian background</option>
+					</optgroup>
+					<optgroup label="Black, African, Caribbean or Black British">
+					  <option value="African">African</option>
+					  <option value="Caribbean">Caribbean</option>
+					  <option value="OtherBlackAfricanCaribbean">Any other Black, African or Caribbean background</option>
+					</optgroup>
+					<optgroup label="Other ethnic group">
+					  <option value="Arab">Arab</option>
+					  <option value="Other">Any other ethnic group</option>
+					</optgroup></select>
+				<label class="radio-label">Male</label><input type="radio" name="gender2" value="M" class="rqd" >
+				<label class="radio-label">Female</label><input type="radio" name="gender2" value="F">
+				<input type="text" name="passport2" placeholder="Passport Number" class="rqd" >
+				<h4>Vaccination</h4>
+				<label>Have you had your vaccination:</label>
+				<div class="form-row-CL">
+					<label class="radio-label">Yes</label><input type="radio" name="vac_stat2" value="1" class="rqd" >
+					<label class="radio-label" >No</label><input type="radio" name="vac_stat2" value="0">
+				</div>
+				<input type="text"  name="vac_type2" placeholder="Vaccination Name or Type - If Known">
+			</div>
+			<br>
+			<div class="" id="registration-person3" style="display:none">
+				<h4>Person 3:</h4>
+				<label>Booking Reference / Client Code ID <br><i>Note: If you already have a Client Booking Reference or an ID Code enter it here. Otherwise, leave blank and an ID Code will be automatically generated</i></label><input type="text" name="code3" placeholder="Client ID Code" >
+				<input type="text" name="first3" class="rqd" placeholder="First Names">
+				<input type="text" name="middle3" placeholder="Middle Names">
+				<input type="text" name="last3" class="rqd" placeholder="Last Names">
+			
+			<label>Date of Birth</label>		
+			<input type="date" name="dob3" max="2008-01-01" class="date-primary rqd">
+			<div class="datepicker-container date-fallback">
+				<input type="text" class="datetimepicker-input date-format rqd" name="dob3" id="dob3" data-target="#dob3" value="" data-date-format="YYYY-MM-DD" placeholder="YYYY-MM-DD">
+				<div class="input-group-append" data-target="#dob3" data-toggle="datetimepicker">
+					<div class="input-group-text">
+						<i class="fa fa-calendar"></i>
+					</div>
+				</div>
+			</div>	
+			
+				<select name="ethnicity3" class="rqd" placeholder="Ethnicity"><option value="" disabled selected>Ethnicity</option>
+					<optgroup label="White">
+					  <option value="UK">English, Welsh, Scottish, Northern Irish or British</option>
+					  <option value="Irish">Irish</option>
+					  <option value="IrishTraveller">Gypsy or Irish Traveller</option>
+					  <option value="OtherWhite">Any other White background</option>
+					</optgroup>
+					<optgroup label="Mixed or Multiple ethnic groups">
+					  <option value="WhiteAndBlackCaribbean">White and Black Caribbean</option>
+					  <option value="WhiteAndBlackAfrican">White and Black African</option>
+					  <option value="WhiteAsian">White and Asian</option>
+					  <option value="MixedOther">Any other Mixed or Multiple ethnic background</option>
+					</optgroup>
+					<optgroup label="Asian or Asian British">
+					  <option value="Indian">Indian</option>
+					  <option value="Pakistani">Pakistani</option>
+					  <option value="Bangladeshi">Bangladeshi</option>
+					  <option value="Chinese">Chinese</option>
+					  <option value="OtherAsian">Any other Asian background</option>
+					</optgroup>
+					<optgroup label="Black, African, Caribbean or Black British">
+					  <option value="African">African</option>
+					  <option value="Caribbean">Caribbean</option>
+					  <option value="OtherBlackAfricanCaribbean">Any other Black, African or Caribbean background</option>
+					</optgroup>
+					<optgroup label="Other ethnic group">
+					  <option value="Arab">Arab</option>
+					  <option value="Other">Any other ethnic group</option>
+					</optgroup></select>
+				<label class="radio-label">Male</label><input type="radio" name="gender3" class="rqd" value="M">
+				<label class="radio-label">Female</label><input type="radio" name="gender3" value="F">
+				<input  type="text" name="passport3" placeholder="Passport Number" class="rqd">
+				<h4>Vaccination</h4>
+				<label>Have you had your vaccination:</label>
+				<div class="form-row-CL">
+					<label class="radio-label">Yes</label><input type="radio" name="vac_stat3" value="1" class="rqd" >
+					<label class="radio-label" >No</label><input type="radio" name="vac_stat3" value="0">
+				</div>
+				<input type="text" name="vac_type3" placeholder="Vaccination Name or Type - If Known">
+			</div>
+			<br>
+			<div class="" id="registration-person4" style="display:none">
+				<h4>Person 4:</h4>
+				<label>Booking Reference / Client Code ID <br><i>Note: If you already have a Client Booking Reference or an ID Code enter it here. Otherwise, leave blank and an ID Code will be automatically generated</i></label><input type="text" name="code4" placeholder="Client ID Code" >
+				<input type="text" name="first4" class="rqd" placeholder="First Names" >
+				<input type="text" name="middle4" placeholder="Middle Names">
+				<input type="text" name="last4"class="rqd"  placeholder="Last Names" >
+			
+			<label>Date of Birth</label>		
+			<input type="date" name="dob4" max="2008-01-01" class="date-primary rqd">
+			<div class="datepicker-container date-fallback">
+				<input type="text" class="datetimepicker-input date-format rqd" name="dob4" id="dob4" data-target="#dob4" value="" data-date-format="YYYY-MM-DD" placeholder="YYYY-MM-DD">
+				<div class="input-group-append" data-target="#dob4" data-toggle="datetimepicker">
+					<div class="input-group-text">
+						<i class="fa fa-calendar"></i>
+					</div>
+				</div>
+			</div>	
+			
+				<select name="ethnicity4" class="rqd" placeholder="Ethnicity" ><option value="" disabled selected>Ethnicity</option>
+					<optgroup label="White">
+					  <option value="UK">English, Welsh, Scottish, Northern Irish or British</option>
+					  <option value="Irish">Irish</option>
+					  <option value="IrishTraveller">Gypsy or Irish Traveller</option>
+					  <option value="OtherWhite">Any other White background</option>
+					</optgroup>
+					<optgroup label="Mixed or Multiple ethnic groups">
+					  <option value="WhiteAndBlackCaribbean">White and Black Caribbean</option>
+					  <option value="WhiteAndBlackAfrican">White and Black African</option>
+					  <option value="WhiteAsian">White and Asian</option>
+					  <option value="MixedOther">Any other Mixed or Multiple ethnic background</option>
+					</optgroup>
+					<optgroup label="Asian or Asian British">
+					  <option value="Indian">Indian</option>
+					  <option value="Pakistani">Pakistani</option>
+					  <option value="Bangladeshi">Bangladeshi</option>
+					  <option value="Chinese">Chinese</option>
+					  <option value="OtherAsian">Any other Asian background</option>
+					</optgroup>
+					<optgroup label="Black, African, Caribbean or Black British">
+					  <option value="African">African</option>
+					  <option value="Caribbean">Caribbean</option>
+					  <option value="OtherBlackAfricanCaribbean">Any other Black, African or Caribbean background</option>
+					</optgroup>
+					<optgroup label="Other ethnic group">
+					  <option value="Arab">Arab</option>
+					  <option value="Other">Any other ethnic group</option>
+					</optgroup></select>
+				<label class="radio-label">Male</label><input type="radio" name="gender4" value="M" class="rqd"  >
+				<label class="radio-label">Female</label><input type="radio" name="gender4" value="F">
+				<input type="text" name="passport4" placeholder="Passport Number" class="rqd" >
+				<h4>Vaccination</h4>
+				<label>Have you had your vaccination:</label>
+				<div class="form-row-CL">
+					<label class="radio-label">Yes</label><input type="radio" name="vac_stat4" value="1" class="rqd" >
+					<label class="radio-label" >No</label><input type="radio" name="vac_stat4" value="0">
+				</div>
+				<input type="text" name="vac_type4" placeholder="Vaccination Name or Type - If Known">
+			</div> </section> -->
+
+			<section>
+			  <h3>Flight Information</h3>
+			
+			<label>The date of your arrival in the UK</label>
+			<input type="date" name="flight1date1" class="datetime-primary" required>
+			<div class="datepicker-container datetime-fallback">
+				<input type="text" class="datetimepicker-input datetime-format" name="flight1date1" id="flight1date1" data-target="#flight1date1" value="" data-date-format="YYYY-MM-DD HH:mm" placeholder="YYYY-MM-DD HH:MI" required>
+				<div class="input-group-append" data-target="#flight1date1" data-toggle="datetimepicker">
+					<div class="input-group-text">
+						<i class="fa fa-calendar"></i>
+					</div>
+				</div>
+			</div>
+			
+			<!-- BOOTSTRAP DATETIME PICKER 12042021 -->
+				<label>Date of Departure from non-exempt country</label>
+				<input type="date" name="transitFlightDate1" class="datetime-primary" required>
+				<div class="datepicker-container datetime-fallback">
+				<input type="text" class="datetimepicker-input datetime-format" name="transitFlightDate1" id="transitFlightDate1" data-target="#transitFlightDate1" value="" data-date-format="YYYY-MM-DD HH:mm" placeholder="YYYY-MM-DD HH:MI" required>
+				<div class="input-group-append" data-target="#transitFlightDate1" data-toggle="datetimepicker">
+					<div class="input-group-text">
+						<i class="fa fa-calendar"></i>
+					</div>
+				</div>
+			</div>
+
+				<input type="text" placeholder="Country which you are travelling from" name="flight1country1" required>
+				<input type="text" placeholder="Flight / Vessel / Train number into the UK" name="flightNo1" required>
+				<label class="checkbox-label">Did you fly through another country? <br>Tick this box if you <strong>have</strong> transited through another country</label>
+				<input name="didTransit1" type="checkbox" id="didTransit1" onClick="checkboxReveal(this,'checkbox-transit-children')">
+				<div id="checkbox-transit-children" style="display:none">
+					<input class="rqd" type="text" placeholder="Country which you transited from" name="transitFlightCountry1">
+					<input class="rqd" type="text" placeholder="Flight / Vessel / Train number into transited country" name="transitFlightNo1">	
+				</div>
+			</section>
+			<section>
+			<h3>Service</h3>
+				<select name="service" placeholder="Service" required >
+					<option value="" disabled selected>Select Test Service</option>
+					<option value="PCR12" >RT-PCR Same Day Result - 12 Hours</option>
+					<option value="PCR24" >RT-PCR Express Test - 24 Hours</option>
+					<option value="PCR48" >RT-PCR Standard - 48 Hours</option>
+					<option value="AG" >Rapid Antigen</option>
+					<option value="AB" >Antibody IgG and IgM</option>
+				</select>
+				<input type="text" id="location" name="location" placeholder="Site Code" value="" >
+				<input type="hidden" name="account_type" value="ext">
+				<label>Date &amp; Time Swab Collected <br><i>Note: Default if unselected will be the time of completion of this registration</i></label>
+				<input type="datetime-local" name="date_collected">
+			</section>				<input type="hidden" name="test_service" value="D28">
+				<input type="hidden" name="home_kit" value="">
+				<input type="hidden" name="formsubmitted" value="TRUE">
+				<input type="submit" class="button button-green" name="submitBtn" id="submitBtn" onclick="register(event)" value="Book">
+			</form>
+		</div>
+	</body>
+</html>
